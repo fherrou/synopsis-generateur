@@ -22,16 +22,16 @@ limitations under the License.
     <b>{{scenar}}</b>
   </template>
   <script>
-      var sujet = ['Un zadiste ', 'Un chasseur ', 'Un promoteur immobilier magouilleur '];
+      var sujet = ['Un zadiste ', 'Un chasseur ', 'Un promoteur immobilier magouilleur ', 'Un industriel véreux '];
       var verbe = ['pollue ', 'occupe ', 'massacre '];
       var objet = ['une ZAD', 'le président du Conseil Général', 'des éoliennes'];
       var complement = [', et il aime ça !', ' sur une ZAD', ' en rechargeant son fusil'];    Polymer({
       scenar: '',
       tirerSynopsis: function(){
-        this.scenar = sujet[Math.floor(Math.random() * 3)] 
-                      + verbe[Math.floor(Math.random() * 3)]
-                      + objet[Math.floor(Math.random() * 3)]
-                      + complement[Math.floor(Math.random() * 3)];
+        this.scenar = sujet[Math.floor(Math.random() * sujet.length)] 
+                      + verbe[Math.floor(Math.random() * verbe.length)]
+                      + objet[Math.floor(Math.random() * objet.length)]
+                      + complement[Math.floor(Math.random() * complement.length)];
       }
     });
   </script>
