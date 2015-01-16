@@ -1,0 +1,38 @@
+<!--
+Copyright 2015 Florence Herrou
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<link rel="import"
+      href="http://www.polymer-project.org/components/polymer/polymer.html">
+
+<polymer-element name="synopsis-generateur">
+  <template>
+    <button on-click="{{tirerSynopsis}}">Synopsis aléatoire</button><br>
+    <b>{{scenar}}</b>
+  </template>
+  <script>
+      var sujet = ['Un zadiste ', 'Un chasseur ', 'Un promoteur immobilier magouilleur '];
+      var verbe = ['pollue ', 'occupe ', 'massacre '];
+      var objet = ['une ZAD', 'le président du Conseil Général', 'des éoliennes'];
+      var complement = [', et il aime ça !', ' sur une ZAD', ' en rechargeant son fusil'];    Polymer({
+      scenar: '',
+      tirerSynopsis: function(){
+        this.scenar = sujet[Math.floor(Math.random() * 3)] 
+                      + verbe[Math.floor(Math.random() * 3)]
+                      + objet[Math.floor(Math.random() * 3)]
+                      + complement[Math.floor(Math.random() * 3)];
+      }
+    });
+  </script>
+</polymer-element>
