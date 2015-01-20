@@ -13,16 +13,20 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-<element name="synopsis-generateur">
+<link rel="import"
+      href="http://www.polymer-project.org/components/polymer/polymer.html">
+
+<polymer-element name="synopsis-generateur">
   <template>
     <button on-click="{{newSynopsis}}">Synopsis aléatoire</button>
     <div id="resultat-tirage"></div>
   </template>
   <script>
       
-      function newSynopsis(){
-        var scenar = tirerSynopsis();
-	document.getElementById('resultat-tirage').innerHTML = scenar;
+      Polymer({    
+        newSynopsis: function(){
+        document.getElementById('resultat-tirage').innerHTML = tirerSynopsis();
       }
+    });
   </script>
-</element>
+</polymer-element>
