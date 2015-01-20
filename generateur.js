@@ -23,8 +23,3 @@ function tirerSynopsis(){
                 + objet[Math.floor(Math.random() * objet.length)]
                  + complement[Math.floor(Math.random() * complement.length)];
 }
-
-function afficherSynopsis(var element){
-  var scenar = tirerSynopsis();
-  element.innerHTML = scenar;
-}
