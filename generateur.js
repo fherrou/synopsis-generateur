@@ -13,7 +13,7 @@ limitations under the License.
 -->
 
 var sujet = ['Un zadiste ', 'Un chasseur ', 'Un promoteur immobilier magouilleur ', 'Un industriel véreux ', 'Un riche héritier texan ', 'Le groupe de PJ ', 'Le peuple elfe ', 'Un naturaliste ', 'Un militant anter-mondialiste '];
-var verbe = ['pollue ', 'occupe ', 'massacre ', 'exploite ', 'dessine ', 'se transforme en ', 'signe une pétition contre ', 'mange végétarien et emmerde ', 'réchauffe '];
+var verbe = ['pollue ', 'occupe ', 'massacre ', 'exploite ', 'dessine ', 'se transforme en ', 'signe une pétition contre ', 'mange végétarien et emmerde ', 'réchauffe ', 'voyage vers '];
 var objet = ['une ZAD', 'le président du Conseil Général', 'des éoliennes', 'un puits de pétrole', 'une mulette perlière', 'les PJ', 'un médicament transgénique', 'la décroissance', 'mère nature', 'une planète sauvage'];
 var complement = [', et il aime ça !', ' sur une ZAD.', ' en rechargeant son fusil.', ' sans le moindre scrupule.', ' pour de l\'argent.', ', puis s\'abonne à Charlie Hebdo.', ' : encore une mission pour les PJ !', ' devant les PJ.', ' et appelle les PJ en renfort.', ' biologique.'];
 
