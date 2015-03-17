@@ -1,0 +1,48 @@
+<script src="script.js"></script>
+<template id="generateur">
+    <style scoped>
+        div {
+            color: green;
+        }
+    </style>
+    <button id="bouton"></button>
+    <div id="resultat"><content>&nbsp;</content></div>
+</template>
+<script>
+  (function() {
+    var myDoc = document.currentScript.ownerDocument;
+    var bouton;
+    var proto = Object.create(HTMLElement.prototype, {
+      libBouton: {                 
+          value: "Générer un scénario"
+      },
+      createdCallback: { 
+        value: function() {
+          var shadow = this.createShadowRoot();
+          var template = myDoc.querySelector('#generateur'); 
+          var clone = document.importNode(template.content, true);
+  
+          var ajout = this.getAttribute("ajouter");
+          bouton = clone.querySelector('#bouton');
+          bouton.addEventListener('click', function() {
+            this.parentNode.querySelector('#resultat').innerText = tirerSynopsis();
+          }, false);
+          
+          var libelle = this.getAttribute("libelle") || this.libBouton;
+          bouton.innerText = libelle;
+  
+          shadow.appendChild(clone);
+        }
+      },
+      attributeChangedCallback: { 
+        value: function(attrName, oldValue, newValue) {
+          if (attrName == "libelle")
+            bouton.innerText = newValue;
+        }
+      }
+    });
+    document.registerElement('synopsis-generateur', {
+      prototype: proto
+    });
+  })();
+</script>

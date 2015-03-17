@@ -1,0 +1,32 @@
+<script src="script.js"></script>
+<template id="generateur">
+    <style>
+        div {
+            color: red;
+        }
+    </style>
+    <button id="bouton">Générer le scénario avec shadow dom</button>
+    <div id="resultat">&nbsp;</div>
+</template>
+<script>
+  (function() {
+    var myDoc = document.currentScript.ownerDocument;
+    var proto = Object.create(HTMLElement.prototype, {
+      createdCallback: { 
+        value: function() {
+          var shadow = this.createShadowRoot();
+          var template = myDoc.querySelector('#generateur'); 
+          var clone = document.importNode(template.content, true);
+  
+          clone.querySelector('#bouton').addEventListener('click', function() {
+            this.parentNode.querySelector('#resultat').innerText = tirerSynopsis();
+          }, false);
+          shadow.appendChild(clone);
+        }
+      }
+    });
+    document.registerElement('synopsis-generateur-simple', {
+      prototype: proto
+    });
+  })();
+</script>

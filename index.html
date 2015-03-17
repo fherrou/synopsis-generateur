@@ -1,12 +1,31 @@
 <!DOCTYPE html>
 <html>
-
   <head>
-    <link rel="import" href="synopsis-generateur.html">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="import" href="generateur.html">
+    <link rel="import" href="generateur-sans-shadow.html">
+    <link rel="import" href="generateur-simple.html">
+    <link rel="import" href="generateur-texte.html">
+    <script src="hello-world.js"></script>
   </head>
-
   <body>
-    <synopsis-generateur></synopsis-generateur>
+    <h1><hello-world></hello-world></h1>
+    
+    <synopsis-generateur-sans></synopsis-generateur-sans>
+    <synopsis-generateur-sans></synopsis-generateur-sans>
+    
+    <synopsis-generateur-simple></synopsis-generateur-simple>
+    <synopsis-generateur-simple></synopsis-generateur-simple>
+    
+    <synopsis-generateur>
+      Votre scénario s'affichera <strong>ici</strong>. 
+    </synopsis-generateur>
+    <synopsis-generateur libelle="Nouveau scénanar" id="last"></synopsis-generateur>
+    
+    
+    <div>
+      Ce texte est dans un div indépendant. 
+      Il prend le style défini dans <em>synopsis-generateur-sans</em>.
+    </div>
   </body>
-
 </html>
